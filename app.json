@@ -1,0 +1,53 @@
+{
+    "name": "NotifyBot",
+    "description": "A modular telegram bot to notify security and fingerprint updates",
+    "keywords": [
+        "telegram",
+        "bot",
+        "userbot",
+        "security patch",
+        "fingerprint",
+        "notify",
+        "update"
+    ],
+    "repository": "https://github.com/PrajjuS/NotifyBot",
+    "website": "https://github.com/PrajjuS",
+    "success_url": "https://github.com/PrajjuS",
+    "env":{
+        "API_ID": {
+            "description": "Telegram API ID. Get this value from my.telegram.org",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Telegram API HASH. Get this value from my.telegram.org",
+            "required": true
+        },
+        "TG_SESSION": {
+            "description": "Pyrogram STRING SESSION. Get this value from https://t.me/genStr_Bot.",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "Telegram BOT TOKEN. Get this value from https://t.me/botfather.",
+            "required": true
+        },
+        "CHAT_ID": {
+            "description": "A space separated list of chat IDs where you want to get notified.",
+            "required": true
+        },
+        "ENABLE_TAG": {
+            "description": "Set this to True if you want all the admins of the group to be tagged after getting notified.",
+            "value": "False",
+            "required": true
+        }
+    },
+    "stack": "heroku-20",
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    },
+    "buildpacks": [
+        {"url": "heroku/python"}
+    ]
+}
